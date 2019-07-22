@@ -10,7 +10,6 @@ export default {
   },
   components: { DeviceItem },
   created () {
-    this.$api.defaults.headers.common['authorization'] = localStorage.accessToken
     this.$api.get('/device')
       .then(r => { this.devices = r.data })
       .catch(e => this.$swal('에러!', e.response.data.message, 'error'))
