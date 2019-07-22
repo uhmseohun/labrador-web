@@ -20,6 +20,11 @@ export default {
 <template>
 <div class="place">
   <h1 class="place__title">장소</h1>
+  <router-link to="/add/place">
+    <span class="place__add">
+        추가하기
+    </span>
+  </router-link>
   <place-item
     :key="`place-${i}`"
     v-for="(place, i) in places"
@@ -31,9 +36,16 @@ export default {
 
 <style lang="scss" scoped>
 .place {
+  &__title {
+    display: inline;
+  }
+  &__add {
+    color: rgb(100, 100, 100);
+  }
   &__item {
-    &:not(:first-child) {
-      margin-top: 10px;
+    margin-top: 10px;
+    &:first-of-type {
+      margin-top: 1rem;
     }
   }
 }
