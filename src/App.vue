@@ -58,6 +58,7 @@ body {
 
 .input {
   &__text {
+    font-family: 'LotteMartHappy';
     display: block;
     border: 0;
     height: 2.5rem;
@@ -72,6 +73,17 @@ body {
       outline: none;
       border-bottom: solid black 1px;
     }
+  }
+
+  &__button {
+    font-family: 'LotteMartHappy';
+    font-size: 1.2rem;
+    height: 2.5rem;
+    background-color: white;
+    border: 0;
+    padding-bottom: 0;
+    color: rgb(100, 100, 100);
+    border-bottom: solid rgb(100, 100, 100) 1px;
   }
 }
 </style>
