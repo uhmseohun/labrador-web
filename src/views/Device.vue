@@ -19,7 +19,14 @@ export default {
 
 <template>
 <div class="device">
-  <h1>디바이스</h1>
+  <h1 class="device__title">
+    디바이스
+  </h1>
+  <router-link to="/add/device">
+    <span class="device__add">
+        추가하기
+    </span>
+  </router-link>
   <device-item
     :key="`device-${i}`"
     v-for="(device, i) in devices"
@@ -31,9 +38,16 @@ export default {
 
 <style lang="scss" scoped>
 .device {
+  &__title {
+    display: inline;
+  }
+  &__add {
+    color: rgb(100, 100, 100);
+  }
   &__item {
-    &:not(:first-child) {
-      margin-top: 10px;
+    margin-top: 10px;
+    &:first-of-type {
+      margin-top: 1rem;
     }
   }
 }
