@@ -64,6 +64,8 @@ export default {
   font-family: 'LotteMartHappy';
   height: 1.3rem;
   padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+
   &__menu {
     font-size: 1.3rem;
   }
