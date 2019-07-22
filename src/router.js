@@ -14,10 +14,8 @@ Vue.use(Router)
 
 const requireAuth = (to, from, next) => {
   if (localStorage.accessToken) {
-    axios.interceptors.request.use(config => {
-      config.headers.authorization =
-        localStorage.accessToken
-    })
+    axios.defaults.headers.common.authorization =
+      localStorage.accessToken
     return next()
   }
   next('/auth')
