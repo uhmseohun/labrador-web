@@ -7,10 +7,11 @@ import Place from '@/views/Place.vue'
 import Notification from '@/views/Notification.vue'
 import Setting from '@/views/Setting.vue'
 
-import AddPlace from '@/views/AddPlace.vue'
-
 import Timeline from '@/views/Timeline.vue'
 import Device from '@/views/Device.vue'
+
+import AddPlace from '@/views/AddPlace.vue'
+import AddDevice from '@/views/AddDevice.vue'
 
 Vue.use(Router)
 
@@ -68,6 +69,12 @@ export default new Router({
       path: '/device',
       name: 'device',
       component: Device,
+      beforeEnter: requireAuth
+    },
+    {
+      path: '/add/device',
+      name: 'addDevice',
+      component: AddDevice,
       beforeEnter: requireAuth
     },
     {
