@@ -28,6 +28,14 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/',
+      name: 'home',
+      beforeEnter: (to, from, next) => {
+        if (localStorage.accessToken) next('/timeline')
+        else next('/auth')
+      }
+    },
+    {
       path: '/auth',
       name: 'login',
       component: Login
