@@ -31,7 +31,10 @@ export default {
               }
             }
           })
-          .catch(e => this.$swal('에러!', e.response.data.message, 'error'))
+          .catch(e => {
+            this.form.desc = this.form.desc.join(',')
+            this.$swal('에러!', e.response.data.message, 'error')
+          })
       } catch (e) {
         this.$swal('에러!', e.message, 'error')
       }
