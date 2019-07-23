@@ -37,4 +37,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.noti {
+  &__item {
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+}
 </style>
