@@ -1,16 +1,6 @@
 <script>
 export default {
-  name: 'Navbar',
-  data () {
-    return {
-      notiCount: 0
-    }
-  },
-  created () {
-    this.$api.get('/notification')
-      .then(r => { this.notiCount = r.data.length })
-      .catch(e => this.$swal('에러!', e.response.data.message, 'error'))
-  }
+  name: 'Navbar'
 }
 </script>
 
@@ -26,11 +16,6 @@ export default {
         class="navbar__icon"
         :src="require('@/assets/notification.png')"
       >
-      <span
-        v-if="notiCount"
-      >
-        {{ notiCount }}
-      </span>
     </router-link>
   </div>
 </div>
