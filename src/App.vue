@@ -43,7 +43,11 @@ body {
   &__content {
     font-family: 'LotteMartHappy';
     margin: 0 auto;
-    padding: 0 15px 17px;
+    padding: 0 15px;
+
+    @media (min-width: 650px) {
+      padding: 0 10rem;
+    }
   }
   &__menubar {
     width: -webkit-fill-available;
