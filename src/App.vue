@@ -84,6 +84,10 @@ body {
     padding-bottom: 0;
     color: rgb(100, 100, 100);
     border-bottom: solid rgb(100, 100, 100) 1px;
+
+    &:not(:first-child) {
+      margin-left: 0.5rem;
+    }
   }
 }
 </style>
