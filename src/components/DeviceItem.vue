@@ -6,6 +6,16 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    removeDevice (id) {
+      this.$api.delete(`/device/${id}`)
+        .then(r => {
+          this.$swal('성공!', r.data.message, 'success')
+          this.$emit('delete')
+        })
+        .catch(e => this.$swal('에러!', e.response.data.message, 'error'))
+    }
   }
 }
 </script>
@@ -31,14 +41,9 @@ export default {
     color: rgb(100, 100, 100);
     line-height: 2rem;
   }
-  &__time {
-    color: rgb(100, 100, 100);
-    line-height: 2rem;
-    float: right;
-  }
-  &__money {
-    color: rgb(242, 156, 69);
-    float: right;
+  &__icon {
+    height: 1rem;
+    fill: black;
   }
 }
 </style>

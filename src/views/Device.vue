@@ -10,9 +10,14 @@ export default {
   },
   components: { DeviceItem },
   created () {
-    this.$api.get('/device')
-      .then(r => { this.devices = r.data })
-      .catch(e => this.$swal('에러!', e.response.data.message, 'error'))
+    this.refresh()
+  },
+  methods: {
+    refresh () {
+      this.$api.get('/device')
+        .then(r => { this.devices = r.data })
+        .catch(e => this.$swal('에러!', e.response.data.message, 'error'))
+    }
   }
 }
 </script>
@@ -29,6 +34,7 @@ export default {
   </router-link>
   <device-item
     :key="`device-${i}`"
+    @delete="refresh()"
     v-for="(device, i) in devices"
     class="device__item"
     :device="device"
