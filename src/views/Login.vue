@@ -27,10 +27,10 @@ export default {
 
 <template>
 <div class="login">
+  <h1 class="login__title">
+    로그인
+  </h1>
   <div class="login__form">
-    <h1 class="login__title">
-      로그인
-    </h1>
     <input
       v-model="form.id"
       @keyup.enter="authorize()"
@@ -44,17 +44,35 @@ export default {
       class="input__text"
       placeholder="비밀번호"
     >
+
+    <button
+      @click="authorize()"
+      class="input__button login__button"
+    >
+      로그인
+    </button>
+
+    <router-link to="/auth/join">
+      <button
+        class="input__button login__button"
+      >
+        회원가입
+      </button>
+    </router-link>
   </div>
 </div>
 </template>
 
 <style lang="scss" scoped>
 .login {
-  &__form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  &__join {
+    color: rgb(100, 100, 100);
+  }
+
+  &__button {
+    float: right;
+    align-items: center;
+    margin-top: 2rem;
   }
 }
 </style>
