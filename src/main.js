@@ -9,7 +9,7 @@ import axios from 'axios'
 import VueSwal from 'vue-swal'
 
 Vue.prototype.$api = axios.create({
-  baseURL: 'http://labrador-api.uhmtoto.space/',
+  baseURL: 'https://labrador-api.uhmtoto.space/',
   headers: {
     common: {
       authorization: localStorage.accessToken
